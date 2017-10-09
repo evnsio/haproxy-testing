@@ -4,17 +4,27 @@ This docker-compose sets up HAProxy in front of an echo server.
 
 ## Usage:
 
-Start it up:
+* Start it up:
 
-```
-docker-compose up
-```
+  ```
+  docker-compose up
+  ```
 
-Reload HAProxy (to pick up changes to _haproxy.cfg_):
+* Make config changes.  
+  
+  Edit _haproxy/haproxy.cfg_ locally on your host.
 
-```
-docker kill -s HUP haproxytesting_haproxy_1
-```
+* Reload HAProxy to pick up any config changes:
+
+  ```
+  docker kill -s HUP haproxytesting_haproxy_1
+  ```
+  
+* Make requests
+
+  ```
+  curl -X GET localhost/foo/bar
+  ```
 
 ## Examples
 

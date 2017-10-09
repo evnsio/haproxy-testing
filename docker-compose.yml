@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  echo:
+    image: solsson/http-echo
+
+  haproxy:
+    image: haproxy:1.7
+    volumes:
+      - ./haproxy/:/usr/local/etc/haproxy/
+    ports:
+      - "80:80"
